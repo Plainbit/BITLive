@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<script xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" chaining="implicit"> 
+ <commands> 
+   <command xsi:type="ExecuteModuleCommand"> 
+     <module name="w32driver-memoryacquire" version="1.4.0.0" /> 
+     <config xsi:type="ParameterListModuleConfig">  
+       <parameters>  
+
+<!-- *************************************************************************** -->
+<!--    SET THE FOLLOWING TO TRUE TO DISABLE HOST HIBERNATION DURING AUDIT       --> 
+<!-- *************************************************************************** -->
+
+          <param name="Prevent Hibernation">
+            <value xsi:type="xsd:boolean">false</value>
+          </param>
+
+<!-- ****************************************************************************  -->
+<!--    DRIVER TO ACQUIRE MEMORY OF (IF NOT USED ALL DRIVER MEMORY IS ACQUIRED)    --> 
+<!-- ****************************************************************************  -->
+
+         <param name="driver name">
+           <value xsi:type="xsd:string">NULL.SYS</value>
+         </param>
+
+<!--  *************************************************************  -->
+<!--     TO AUDIT AGAINST AN ACQUIRED MEMORY IMAGE, GIVE FILENAME    -->
+<!--  *************************************************************  -->
+<!--
+          <param name="memory file">
+            <value xsi:type="xsd:string">C:\MemoryDumps\memory.img</value>
+          </param>
+-->
+       </parameters>  
+     </config> 
+   </command> 
+ </commands> 
+</script> 

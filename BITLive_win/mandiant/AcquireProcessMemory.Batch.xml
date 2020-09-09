@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<script xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" chaining="implicit">
+  <commands>
+    <command xsi:type="ExecuteModuleCommand">
+      <module name="w32processes-memoryacquire" version="1.4.37.0" />
+      <config xsi:type="ParameterListModuleConfig">
+        <parameters>
+
+<!-- *************************************************************************** -->
+<!--    SET THE FOLLOWING TO TRUE TO DISABLE HOST HIBERNATION DURING AUDIT       --> 
+<!-- *************************************************************************** -->
+
+          <param name="Prevent Hibernation">
+            <value xsi:type="xsd:boolean">false</value>
+          </param>
+
+<!--  *********************************************************  -->
+<!--     WHAT PROCESS(ES) DO YOU WANT ITEMS RETURNED ON?         -->
+<!--     Specify process name (first 15 char) or PID             -->
+<!--     A PID of 4294967295 means all processes (0xffffffff)    -->
+<!--     (If name is used, PID must be 4294967295 or omitted)    -->
+<!--  *********************************************************  -->
+<!--
+          <param name="pid">
+            <value xsi:type="xsd:unsignedInt">4294967295</value>
+          </param>
+-->
+          <param name="process name">
+            <value xsi:type="xsd:string">spoolsv.exe</value>
+          </param>
+<!--
+          <param name="Content Regex">
+            <value xsi:type="ArrayOfString">
+		  <string></string>
+            </value>
+          </param>
+-->
+<!--  *************************************************************  -->
+<!--     TO AUDIT AGAINST AN ACQUIRED MEMORY IMAGE, GIVE FILENAME    -->
+<!--  *************************************************************  -->
+
+<!--
+          <param name="memory file">
+            <value xsi:type="xsd:string">C:\MemoryDumps\memory.img</value>
+          </param>
+-->
+        </parameters>
+      </config>
+    </command>
+  </commands>
+</script>
