@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<script xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" chaining="implicit">
+  <commands>
+    <command xsi:type="ExecuteModuleCommand">
+      <module name="w32memory-acquisition" version="1.4.0.0" />
+      <config xsi:type="ParameterListModuleConfig">
+        <parameters>
+
+<!-- *************************************************************************** -->
+<!--    SET THE FOLLOWING TO TRUE TO DISABLE HOST HIBERNATION DURING AUDIT       --> 
+<!-- *************************************************************************** -->
+
+          <param name="Prevent Hibernation">
+            <value xsi:type="xsd:boolean">false</value>
+          </param>
+
+<!-- *************************************************************************** -->
+<!--    THE FOLLOWING PARAMETERS ARE FOR PARTIAL ACQUIRES                        --> 
+<!--    Memory is read in 4k pages, beginning and ending at page boundaries.     -->
+<!-- *************************************************************************** -->
+<!--
+          <param name="offset">
+            <value xsi:type="xsd:unsignedLong">204800</value>
+          </param>
+          <param name="size">
+            <value xsi:type="xsd:unsignedLong">16384</value>
+          </param>
+-->
+        </parameters>
+      </config>
+    </command>
+  </commands>
+</script>

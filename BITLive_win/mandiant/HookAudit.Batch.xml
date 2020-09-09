@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<script xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" chaining="implicit">
+  <commands>
+    <command xsi:type="ExecuteModuleCommand">
+      <module name="w32kernel-hookdetection" version="1.4.0.0" />
+      <config xsi:type="ParameterListModuleConfig">
+        <parameters>
+
+<!-- *************************************************************************** -->
+<!--    SET THE FOLLOWING TO TRUE TO DISABLE HOST HIBERNATION DURING AUDIT       --> 
+<!-- *************************************************************************** -->
+
+          <param name="Prevent Hibernation">
+            <value xsi:type="xsd:boolean">false</value>
+          </param>
+
+<!-- *************************************************************************** -->          
+<!--  WHICH TYPES OF HOOKS DO YOU WANT TO LOOK FOR?                              -->
+<!-- *************************************************************************** --> 
+
+        <param name="idt">
+            <value xsi:type="xsd:boolean">true</value>
+        </param>
+        <param name="ssdt_index">
+            <value xsi:type="xsd:boolean">true</value>
+        </param>
+        <param name="ssdt_inline">
+            <value xsi:type="xsd:boolean">true</value>
+        </param>
+        <param name="drivers">
+            <value xsi:type="xsd:boolean">true</value>
+        </param>
+
+<!-- *************************************************************************** -->
+<!--    YOU CAN READ FROM ACQUIRED MEMORY IMAGES                                 --> 
+<!-- *************************************************************************** --> 
+<!--
+          <param name="memory file">
+            <value xsi:type="xsd:string">C:\MemoryDumps\memory.img</value>
+          </param>
+-->
+        </parameters>
+      </config>
+
+<!-- ************************************************************** -->
+<!--    WHAT XPATH FILTER(S) DO YOU WANT APPLIED TO THE RESULTS?    -->
+<!-- ************************************************************** -->
+<!--
+      <filters>
+        <filter>
+          <module name="xpath" />
+          <config xsi:type="ParameterListModuleConfig">
+            <parameters>
+              <param name="expression">
+                <value xsi:type="xsd:string"></value>
+              </param>  
+            </parameters>
+          </config>
+        </filter>
+      </filters>
+-->     
+    </command>
+  </commands>
+</script>

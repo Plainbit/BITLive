@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<script xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" chaining="implicit">
+  <commands>
+    <command xsi:type="ExecuteModuleCommand">
+      <module name="w32drivers-signature" version="1.4.0.0" />
+      <config xsi:type="ParameterListModuleConfig">
+        <parameters>
+
+<!-- *************************************************************************** -->
+<!--    SET THE FOLLOWING TO TRUE TO DISABLE HOST HIBERNATION DURING AUDIT       --> 
+<!-- *************************************************************************** -->
+
+          <param name="Prevent Hibernation">
+            <value xsi:type="xsd:boolean">false</value>
+          </param>
+
+          <param name="enumerate imports">
+            <value xsi:type="xsd:boolean">true</value>
+          </param>
+          <param name="enumerate exports">
+            <value xsi:type="xsd:boolean">true</value>
+          </param>
+          <param name="Preserve Times">
+            <value xsi:type="xsd:boolean">false</value>
+          </param>
+          <param name="MD5">
+            <value xsi:type="xsd:boolean">false</value>
+          </param>
+          <param name="SHA1">
+            <value xsi:type="xsd:boolean">false</value>
+          </param>
+          <param name="SHA256">
+            <value xsi:type="xsd:boolean">false</value>
+          </param>
+          <param name="Verify Digital Signatures">
+            <value xsi:type="xsd:boolean">true</value>
+          </param>
+          <param name="raw mode">
+            <value xsi:type="xsd:boolean">false</value>
+          </param>
+
+
+<!--  *********************************************************  -->
+<!--     STRINGS CAN GENERATE A LOT OF DATA. THIS SHOULD ONLY    -->
+<!--     BE enabled FOR A SINGLE PROCESS AT A TIME. YOU CAN      -->
+<!--     ALSO reduce THE AMOUNT OF DATA BY INCREASING THE        -->
+<!--     SHORTEST STRING LENGTH.                                 -->
+<!--  *********************************************************  -->
+
+<!--
+          <param name="strings">
+            <value xsi:type="xsd:boolean">false</value>
+          </param>
+          <param name="shortest matched string">
+            <value xsi:type="xsd:int">8</value>
+          </param>
+-->
+
+    
+<!-- *************************************************************************** -->
+<!--    YOU CAN READ FROM ACQUIRED MEMORY IMAGES                                 --> 
+<!-- *************************************************************************** --> 
+<!--
+          <param name="memory file">
+            <value xsi:type="xsd:string">C:\MemoryDumps\memory.img</value>
+          </param>
+-->
+        </parameters>
+      </config>
+
+<!-- ************************************************************** -->
+<!--    WHAT XPATH FILTER(S) DO YOU WANT APPLIED TO THE RESULTS?    -->
+<!-- ************************************************************** -->
+<!--
+      <filters>
+        <filter>
+          <module name="xpath" />
+          <config xsi:type="ParameterListModuleConfig">
+            <parameters>
+              <param name="expression">
+                <value xsi:type="xsd:string"></value>
+              </param>  
+            </parameters>
+          </config>
+        </filter>
+      </filters>
+-->     
+    </command>
+  </commands>
+</script>
